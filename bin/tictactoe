@@ -1,0 +1,36 @@
+require_relative '../config/environment'
+
+puts "Simple Tic Tac Toe"
+puts "=================="
+
+def start
+  puts "Press '1' to play with Computer, Press '2' for two-player game:"
+  input = gets.strip
+  case input
+    when "1"
+      Game.new(Player::Human.new("X"), Player::AI.new("O")).play
+      puts "GG! Would you like to play again?"
+      loop_around
+    when "2"
+      Game.new(Player::Human.new("X"), Player::Human.new("O")).play
+      puts "GG! Would you like to play again?"
+      loop_around
+    else
+      puts "Invalid entry!"
+      start
+  end
+end
+
+def loop_around
+  puts "Please input y or n"
+  answer = gets.strip
+  case answer
+    when "y"
+      start
+    when "n"
+      puts "Bye Bye, See ya later!"
+    else
+      loop_around
+  end
+end
+start

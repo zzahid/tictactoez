@@ -1,18 +1,6 @@
 require 'spec_helper'
 
 describe 'Game' do
-  describe '::COMBINATIONS' do
-    it 'defines a constant COMBINATIONS with arrays for each win combination' do
-      expect(Game::COMBINATIONS).to include_array([0,1,2])
-      expect(Game::COMBINATIONS).to include_array([3,4,5])
-      expect(Game::COMBINATIONS).to include_array([6,7,8])
-      expect(Game::COMBINATIONS).to include_array([0,3,6])
-      expect(Game::COMBINATIONS).to include_array([1,4,7])
-      expect(Game::COMBINATIONS).to include_array([2,5,8])
-      expect(Game::COMBINATIONS).to include_array([0,4,8])
-      expect(Game::COMBINATIONS).to include_array([6,4,2])
-    end
-  end
 
   describe '#board' do
     it 'provides access to the board' do
